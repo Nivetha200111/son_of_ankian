@@ -1,0 +1,23 @@
+DB2TestManager Reference Implementation
+
+This file serves as a placeholder for the reference implementation mentioned in the problem statement.
+The actual implementation details should be provided as part of the requirements.
+
+Key Methods to Implement:
+- Token and placeholder handling (parseTokensFromQuery, ensureConsistentNumberedPlaceholders*, findExistingValueForToken, addKeyVariants, firstKey)
+- Alias and table mapping (extractAliasToTableMapping, extractFromChunk, stripQuotesAndSpaces, splitTopLevelByComma, splitPreservingQuoted, tokenizeSpec)
+- Database operations (ensureParentsForRow, ensureRowExists, ensureRowAndParentsExist, existsByPk, insertRow, fetchExistingPkValueIfApplicable)
+- Metadata operations (getColumns, getColumnMeta, getPrimaryKeys, getImportedKeys)
+- Value generation (generateValueForColumnType, generateSelectiveRandomValueForField, sanitizeValueForColumn, minimalValueForColumn, randomAlphaNum, repeatFit)
+- DAO execution (callDaoMethodAndLog, runDirectDBQueries, categorizeMethods, createMethodCountMap)
+- Data preparation (prepareDuplicateData, prepareRowDataforOnline, retrieveRecordsFromTable)
+- Utility methods (extractTemplateMap, firstTemplate, getTemplateForMethod, buildDaoDependencyMap, parseTablesFromSql)
+- Mapper and config loading (getMapperForTableBySource, loadMapperForTableBySource, parseMapperBySource)
+- Validation and cleanup (ensureValidLogicalComparisonInQuery, ensureNoNullValue, cleanupTrackedRecords)
+- Error handling (extractSQLCode, unwrapSqlCode, logErrorSummary)
+- Support methods (retrieveClass, getReadingStrategy, randomAuditFileNameFallback, fingerprint, safe)
+
+Transaction Management:
+- Simple single-transaction connection management
+- Remove lock-based per-DAO transactions
+- Preserve existing class and method names
